@@ -21,7 +21,7 @@ main() {
 run_prettier() {
   set_ignored_files
 
-  prettier \
+  npx prettier \
     --write \
     --print-width=120 \
     --no-semi \
