@@ -1,0 +1,22 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run ./fmt.sh
+        uses: ./ci/image
+        with:
+          args: ./fmt.sh
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run ./lint.sh
+        uses: ./ci/image
+        with:
+          args: ./lint.sh
