@@ -1,6 +1,6 @@
 # ci
 
-![ci](https://github.com/nhooyr/ci/workflows/ci/badge.svg)
+[![ci](https://github.com/nhooyr/ci/workflows/ci/badge.svg)](https://github.com/nhooyr/ci/actions?query=workflow%3Aci)
 
 This repository contains scripts I find myself constantly using across CIs.
 
