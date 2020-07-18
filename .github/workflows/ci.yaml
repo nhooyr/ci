@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Run ./fmt.sh
+      - name: Run ./ci/fmt.sh
         uses: ./ci/image
         with:
-          args: ./fmt.sh
+          args: ./ci/fmt.sh
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Run ./lint.sh
+      - name: Run ./ci/lint.sh
         uses: ./ci/image
         with:
-          args: ./lint.sh
+          args: ./ci/lint.sh
