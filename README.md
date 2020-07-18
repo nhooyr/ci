@@ -1,6 +1,6 @@
-# ci-scripts
+# ci
 
-![ci](https://github.com/nhooyr/ci-scripts/workflows/ci/badge.svg)
+![ci](https://github.com/nhooyr/ci/workflows/ci/badge.svg)
 
 This repository contains scripts I find myself constantly using across CIs.
 
