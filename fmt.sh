@@ -19,22 +19,24 @@ main() {
 }
 
 run_prettier() {
-  set_ignored_files
-
-  npx prettier \
-    --write \
-    --print-width=120 \
-    --no-semi \
-    --trailing-comma=all \
-    --no-bracket-spacing \
-    --arrow-parens=avoid \
-    "--ignore-path=$ignored_files" \
-    . || true
+  prettier_files=$(git ls-files '*.ts' '*.js' '*.tsx' '*.jsx' '*.html' '*.css')
+  if [ "$prettier_files" ]; then
+    npx prettier \
+      --write \
+      --print-width=120 \
+      --no-semi \
+      --trailing-comma=all \
+      --no-bracket-spacing \
+      --arrow-parens=avoid \
+      $prettier_files
+  fi
 }
 
 run_shfmt() {
   set_shell_files
-  shfmt -i 2 -w -s -sr $shell_files || true
+  if [ "$shell_files" ]; then
+    shfmt -i 2 -w -s -sr $shell_files || true
+  fi
 }
 
 assert_unchanged() {
