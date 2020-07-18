@@ -18,7 +18,7 @@ set_shell_files() {
   set_ignored_files
   shell_files="$(shfmt -f $(git ls-files))"
   if [ -s "$ignored_files" ]; then
-    shell_files="$(echo "$files" | grep -Fvf "$ignored_files" || true)"
+    shell_files="$(echo "$shell_files" | grep -Fvf "$ignored_files" || true)"
   fi
 }
 
