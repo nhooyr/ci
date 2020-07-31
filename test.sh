@@ -2,6 +2,12 @@
 set -eu
 
 main() {
+  if is_go_package; then
+    run_go_test
+  fi
+}
+
+run_go_test() {
   go test -cover -coverprofile=ci/out/coverage.prof -coverpkg=./... "$@" ./...
   if [ "$GO_COVERAGE_IGNORE" ]; then
     new_coverage="$(mktemp)"
