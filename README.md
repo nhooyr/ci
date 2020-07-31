@@ -9,3 +9,5 @@ my preferred settings and a script to test Go packages with my preferred
 settings.
 
 To use it copy the contents of the example directory to your repository.
+
+And run `git submodule add https://github.com/nhooyr/ci ci/ci`.
