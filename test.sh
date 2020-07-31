@@ -8,7 +8,7 @@ main() {
 }
 
 run_go_test() {
-  go test -cover -coverprofile=ci/out/coverage.prof -coverpkg=./... "$@" ./...
+  go test -cover -coverprofile=ci/out/coverage.prof -coverpkg=./... ./...
   if [ "$GO_COVERAGE_IGNORE" ]; then
     new_coverage="$(mktemp)"
     grep -Fvf "$GO_COVERAGE_IGNORE" ci/out/coverage.prof > "$new_coverage"
